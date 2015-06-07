@@ -35,8 +35,8 @@ default['packetbeat']['config']['output']['redis']['host'] = '127.0.0.1'
 default['packetbeat']['config']['output']['redis']['port'] = 6_379
 default['packetbeat']['config']['output']['redis']['save_topology'] = false
 
-default['packetbeat']['config']['output']['elasticsearch']['enabled'] = false
-default['packetbeat']['config']['output']['elasticsearch']['path'] = '/tmp/packetbeat'
-default['packetbeat']['config']['output']['elasticsearch']['filename'] = 'packetbeat'
-default['packetbeat']['config']['output']['elasticsearch']['rotate_every_kb'] = 1_000
-default['packetbeat']['config']['output']['elasticsearch']['number_of_files'] = 7
+default['packetbeat']['config']['output']['file']['enabled'] = false
+default['packetbeat']['config']['output']['file']['path'] = '/tmp/packetbeat'
+default['packetbeat']['config']['output']['file']['filename'] = 'packetbeat'
+default['packetbeat']['config']['output']['file']['rotate_every_kb'] = 1_000
+default['packetbeat']['config']['output']['file']['number_of_files'] = 7
