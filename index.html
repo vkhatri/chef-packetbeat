@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Chef Packetbeat by vkhatri</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">Chef Packetbeat</h1>
+      <h2 class="project-tagline">Chef Cookbook to Manage ElasticSearch Packetbeat</h2>
+      <a href="https://github.com/vkhatri/chef-packetbeat" class="btn">View on GitHub</a>
+      <a href="https://github.com/vkhatri/chef-packetbeat/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/vkhatri/chef-packetbeat/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <h1>
+<a id="packetbeat-cookbook" class="anchor" href="#packetbeat-cookbook" aria-hidden="true"><span class="octicon octicon-link"></span></a>packetbeat Cookbook</h1>
+
+<p><a href="https://travis-ci.org/vkhatri/chef-packetbeat"><img src="https://travis-ci.org/vkhatri/chef-packetbeat.svg?branch=master" alt="Build Status"></a></p>
+
+<p>This is a <a href="https://www.chef.io/">Chef</a> cookbook to manage <a href="http://packetbeat.com">PacketBeat</a>.</p>
+
+<h2>
+<a id="repository" class="anchor" href="#repository" aria-hidden="true"><span class="octicon octicon-link"></span></a>Repository</h2>
+
+<p><a href="https://github.com/vkhatri/chef-packetbeat">https://github.com/vkhatri/chef-packetbeat</a></p>
+
+<h2>
+<a id="supported-os" class="anchor" href="#supported-os" aria-hidden="true"><span class="octicon octicon-link"></span></a>Supported OS</h2>
+
+<p>This cookbook was tested on Amazon &amp; Ubuntu Linux and expected to work on other RHEL platforms.</p>
+
+<h2>
+<a id="recipes" class="anchor" href="#recipes" aria-hidden="true"><span class="octicon octicon-link"></span></a>Recipes</h2>
+
+<ul>
+<li><p><code>packetbeat::default</code> - default recipe (use it for run_list)</p></li>
+<li><p><code>packetbeat::install</code> - install packetbeat</p></li>
+<li><p><code>packetbeat::config</code> - configure packetbeat</p></li>
+</ul>
+
+<h2>
+<a id="core-attributes" class="anchor" href="#core-attributes" aria-hidden="true"><span class="octicon octicon-link"></span></a>Core Attributes</h2>
+
+<ul>
+<li><p><code>default['packetbeat']['version']</code> (default: <code>1.0.0~Beta1</code>): packetbeat version</p></li>
+<li><p><code>default['packetbeat']['package_url']</code> (default: <code>calculated</code>): package download url</p></li>
+<li><p><code>default['packetbeat']['packages']</code> (default: <code>calculated</code>): package dependencies</p></li>
+<li><p><code>default['packetbeat']['conf_dir']</code> (default: <code>/etc/packetbeat</code>): packetbeat yaml configuration file directory</p></li>
+<li><p><code>default['packetbeat']['conf_file']</code> (default: <code>/etc/packetbeat/packetbeat.yml</code>): packetbeat configuration file</p></li>
+</ul>
+
+<h2>
+<a id="configuration-file-packetbeatyml-attributes" class="anchor" href="#configuration-file-packetbeatyml-attributes" aria-hidden="true"><span class="octicon octicon-link"></span></a>Configuration File packetbeat.yml Attributes</h2>
+
+<ul>
+<li><p><code>default['packetbeat']['config']['device']</code> (default: <code>any</code>): packetbeat interface device name</p></li>
+<li><p><code>default['packetbeat']['config']['protocols']</code> (default: <code>{}</code>): packetbeat services to capture packets</p></li>
+<li><p><code>default['packetbeat']['config']['output']['elasticsearch']['enabled']</code> (default: <code>true</code>):</p></li>
+<li><p><code>default['packetbeat']['config']['output']['elasticsearch']['host']</code> (default: <code>127.0.0.1</code>):</p></li>
+<li><p><code>default['packetbeat']['config']['output']['elasticsearch']['port']</code> (default: <code>9200</code>):</p></li>
+<li><p><code>default['packetbeat']['config']['output']['elasticsearch']['save_topology']</code> (default: <code>false</code>):</p></li>
+<li><p><code>default['packetbeat']['config']['output']['redis']['enabled']</code> (default: <code>false</code>):</p></li>
+<li><p><code>default['packetbeat']['config']['output']['redis']['host']</code> (default: <code>127.0.0.1</code>):</p></li>
+<li><p><code>default['packetbeat']['config']['output']['redis']['port']</code> (default: <code>6379</code>):</p></li>
+<li><p><code>default['packetbeat']['config']['output']['redis']['save_topology']</code> (default: <code>false</code>):</p></li>
+<li><p><code>default['packetbeat']['config']['output']['file']['enabled']</code> (default: <code>false</code>):</p></li>
+<li><p><code>default['packetbeat']['config']['output']['file']['path']</code> (default: <code>/tmp/packetbeat</code>):</p></li>
+<li><p><code>default['packetbeat']['config']['output']['file']['filename']</code> (default: <code>packetbeat</code>):</p></li>
+<li><p><code>default['packetbeat']['config']['output']['file']['rotate_every_kb']</code> (default: <code>10240</code>):</p></li>
+<li><p><code>default['packetbeat']['config']['output']['file']['number_of_files']</code> (default: <code>7</code>):</p></li>
+</ul>
+
+<p>For more attribute info, visit below links:</p>
+
+<p><a href="https://github.com/elastic/packetbeat/blob/master/etc/packetbeat.yml">https://github.com/elastic/packetbeat/blob/master/etc/packetbeat.yml</a></p>
+
+<h2>
+<a id="contributing" class="anchor" href="#contributing" aria-hidden="true"><span class="octicon octicon-link"></span></a>Contributing</h2>
+
+<ol>
+<li>Fork the repository on Github</li>
+<li>Create a named feature branch (like <code>add_component_x</code>)</li>
+<li>Write your change</li>
+<li>Write tests for your change (if applicable)</li>
+<li>Run the tests (<code>rake &amp; rake knife</code>), ensuring they all pass</li>
+<li>Write new resource/attribute description to <code>README.md</code>
+</li>
+<li>Write description about changes to PR</li>
+<li>Submit a Pull Request using Github</li>
+</ol>
+
+<h2>
+<a id="copyright--license" class="anchor" href="#copyright--license" aria-hidden="true"><span class="octicon octicon-link"></span></a>Copyright &amp; License</h2>
+
+<p>Authors:: Virender Khatri and <a href="https://github.com/vkhatri/chef-packetbeat/graphs/contributors">Contributors</a></p>
+
+<pre>
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+</pre>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/vkhatri/chef-packetbeat">Chef Packetbeat</a> is maintained by <a href="https://github.com/vkhatri">vkhatri</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
+</html>
+
