@@ -30,12 +30,12 @@ default['packetbeat']['config']['protocols'] = {}
 default['packetbeat']['config']['output']['elasticsearch']['enabled'] = true
 default['packetbeat']['config']['output']['elasticsearch']['host'] = '127.0.0.1'
 default['packetbeat']['config']['output']['elasticsearch']['port'] = 9_200
-default['packetbeat']['config']['output']['elasticsearch']['save_topology'] = false
+default['packetbeat']['config']['output']['elasticsearch']['save_topology'] = true
 
 default['packetbeat']['config']['output']['redis']['enabled'] = false
 default['packetbeat']['config']['output']['redis']['host'] = '127.0.0.1'
 default['packetbeat']['config']['output']['redis']['port'] = 6_379
-default['packetbeat']['config']['output']['redis']['save_topology'] = false
+default['packetbeat']['config']['output']['redis']['save_topology'] = true
 
 default['packetbeat']['config']['output']['file']['enabled'] = false
 default['packetbeat']['config']['output']['file']['path'] = '/tmp/packetbeat'
