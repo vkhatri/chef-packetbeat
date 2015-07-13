@@ -10,6 +10,8 @@ default['packetbeat']['packages'] = value_for_platform_family(
   %w(rhel fedora) => %w(libpcap)
 )
 
+default['packetbeat']['notify_restart'] = true
+
 default['packetbeat']['conf_dir'] = '/etc/packetbeat'
 default['packetbeat']['conf_file'] = ::File.join(node['packetbeat']['conf_dir'], 'packetbeat.yml')
 
