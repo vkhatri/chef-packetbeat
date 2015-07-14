@@ -18,6 +18,10 @@ default['packetbeat']['conf_file'] = ::File.join(node['packetbeat']['conf_dir'],
 # capture interface traffic
 default['packetbeat']['config']['device'] = 'any'
 
+# default['packetbeat']['config']['shipper']['name'] = node['fqdn'] || node['host']
+# default['packetbeat']['config']['shipper']['tags'] = []
+# default['packetbeat']['config']['shipper']['ignore_outgoing'] = true
+
 # capture service traffic
 default['packetbeat']['config']['protocols'] = {}
 # default['packetbeat']['config']['protocols']['http']['ports'] = %w(80 8080)
@@ -42,3 +46,6 @@ default['packetbeat']['config']['output']['file']['path'] = '/tmp/packetbeat'
 default['packetbeat']['config']['output']['file']['filename'] = 'packetbeat'
 default['packetbeat']['config']['output']['file']['rotate_every_kb'] = 1_000
 default['packetbeat']['config']['output']['file']['number_of_files'] = 7
+
+# default['packetbeat']['config']['procs']['enabled'] = false
+# default['packetbeat']['config']['procs']['enabled']['monitored'] = [{'process' => 'mysqld', 'cmdline_grep' => 'mysqld]
