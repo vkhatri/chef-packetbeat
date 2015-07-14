@@ -1,4 +1,4 @@
-default['packetbeat']['version'] = '1.0.0~Beta1'
+default['packetbeat']['version'] = '1.0.0-beta2'
 
 default['packetbeat']['package_url'] = value_for_platform_family(
   'debian' => "https://download.elasticsearch.org/beats/packetbeat/packetbeat_#{node['packetbeat']['version']}_amd64.deb",
