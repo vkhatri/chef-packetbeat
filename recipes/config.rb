@@ -22,7 +22,9 @@ file node['packetbeat']['conf_file'] do
   notifies :restart, 'service[packetbeat]', :delayed if node['packetbeat']['notify_restart']
 end
 
+service_action = node['packetbeat']['disable_service'] ? [:disable, :stop] : [:enable, :start]
+
 service 'packetbeat' do
   supports :status => true, :restart => true
-  action [:enable, :start]
+  action service_action
 end
