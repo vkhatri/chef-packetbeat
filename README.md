@@ -28,7 +28,7 @@ This cookbook was tested on Amazon & Ubuntu Linux and expected to work on other 
 ## Core Attributes
 
 
-* `default['packetbeat']['version']` (default: `1.0.0-beta2`): packetbeat version
+* `default['packetbeat']['version']` (default: `1.0.0-beta3`): packetbeat version
 
 * `default['packetbeat']['package_url']` (default: `calculated`): package download url
 
@@ -39,6 +39,8 @@ This cookbook was tested on Amazon & Ubuntu Linux and expected to work on other 
 * `default['packetbeat']['conf_file']` (default: `/etc/packetbeat/packetbeat.yml`): packetbeat configuration file
 
 * `default['packetbeat']['notify_restart']` (default: `true`): whether to restart packetbeat service on configuration file change
+
+* `default['packetbeat']['disable_service']` (default: `false`): whether to stop and disable packetbeat service
 
 
 ## Configuration File packetbeat.yml Attributes

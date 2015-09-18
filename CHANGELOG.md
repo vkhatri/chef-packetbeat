@@ -3,6 +3,15 @@ packetbeat CHANGELOG
 
 This file is used to list changes made in each version of the packetbeat cookbook.
 
+0.1.8
+-----
+
+- Virender Khatri - #8, optional attribute to stop and disable the service
+
+- Virender Khatri - #7, update version to beta3
+
+- Virender Khatri - #6, update default attriutes for new protocol support in beta3 release
+
 0.1.5
 -----
 
