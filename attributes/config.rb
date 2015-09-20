@@ -55,7 +55,7 @@ default['packetbeat']['config']['protocols'] = {}
 
 # elasticsearch host info
 default['packetbeat']['config']['output']['elasticsearch']['enabled'] = true
-default['packetbeat']['config']['output']['elasticsearch']['hosts'] = ['127.0.0.1:9200']
+default['packetbeat']['config']['output']['elasticsearch']['hosts'] = []
 # host and port attributes are deprecated
 # and will be removed on next release
 default['packetbeat']['config']['output']['elasticsearch']['host'] = '127.0.0.1'
