@@ -19,7 +19,7 @@
 
 file node['packetbeat']['conf_file'] do
   content JSON.parse(node['packetbeat']['config'].to_json).to_yaml.lines.to_a[1..-1].join
-  notifies :restart, 'service[packetbeat]', :delayed if node['packetbeat']['notify_restart']
+  notifies :restart, 'service[packetbeat]' if node['packetbeat']['notify_restart'] && !node['packetbeat']['disable_service']
 end
 
 service_action = node['packetbeat']['disable_service'] ? [:disable, :stop] : [:enable, :start]
