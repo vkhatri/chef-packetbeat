@@ -1,4 +1,4 @@
-default['packetbeat']['version'] = '1.0.0-beta3'
+default['packetbeat']['version'] = '1.0.0-rc2'
 default['packetbeat']['disable_service'] = false
 
 default['packetbeat']['package_url'] = value_for_platform_family(
