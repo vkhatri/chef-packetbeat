@@ -6,7 +6,7 @@ packetbeat Cookbook
 This is a [Chef] cookbook to manage [PacketBeat].
 
 
->> For Production environment, always prefer the [most recent release](https://supermarket.chef.io/cookbooks/filebeat).
+>> For Production environment, always prefer the [most recent release](https://supermarket.chef.io/cookbooks/packetbeat).
 
 ## Repository
 
@@ -32,7 +32,7 @@ This cookbook was tested on Amazon & Ubuntu Linux and expected to work on other 
 
 * `default['packetbeat']['version']` (default: `1.0.0-rc2`): packetbeat version
 
-* `default['packetbeat']['package_url']` (default: `calculated`): package download url
+* `default['packetbeat']['package_url']` (default: `auto`): package download url
 
 * `default['packetbeat']['packages']` (default: `calculated`): package dependencies
 
@@ -51,32 +51,7 @@ This cookbook was tested on Amazon & Ubuntu Linux and expected to work on other 
 
 * `default['packetbeat']['config']['protocols']` (default: `{}`): packetbeat services to capture packets
 
-* `default['packetbeat']['config']['output']['elasticsearch']['enabled']` (default: `true`):
-
-* `default['packetbeat']['config']['output']['elasticsearch']['host']` (default: `127.0.0.1`):
-
-* `default['packetbeat']['config']['output']['elasticsearch']['port']` (default: `9200`):
-
-* `default['packetbeat']['config']['output']['elasticsearch']['save_topology']` (default: `false`):
-
-* `default['packetbeat']['config']['output']['redis']['enabled']` (default: `false`):
-
-* `default['packetbeat']['config']['output']['redis']['host']` (default: `127.0.0.1`):
-
-* `default['packetbeat']['config']['output']['redis']['port']` (default: `6379`):
-
-* `default['packetbeat']['config']['output']['redis']['save_topology']` (default: `false`):
-
-* `default['packetbeat']['config']['output']['file']['enabled']` (default: `false`):
-
-* `default['packetbeat']['config']['output']['file']['path']` (default: `/tmp/packetbeat`):
-
-* `default['packetbeat']['config']['output']['file']['filename']` (default: `packetbeat`):
-
-* `default['packetbeat']['config']['output']['file']['rotate_every_kb']` (default: `10240`):
-
-* `default['packetbeat']['config']['output']['file']['number_of_files']` (default: `7`):
-
+* `default['packetbeat']['config']['output']` (default: `{}`): packetbeat output configuration attributes
 
 For more attribute info, visit below links:
 
