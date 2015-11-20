@@ -2,10 +2,10 @@
 # https://www.elastic.co/guide/en/beats/packetbeat/current/configuration.html
 #
 # capture interface traffic
-default['packetbeat']['config']['device'] = 'any'
-# default['packetbeat']['config']['snaplen'] = 1514
-# default['packetbeat']['config']['type'] = 'af_packet'
-# default['packetbeat']['config']['buffer_size_mb'] = 30
+default['packetbeat']['config']['interfaces']['device'] = 'any'
+# default['packetbeat']['config']['interfaces']['snaplen'] = 1514
+# default['packetbeat']['config']['interfaces']['type'] = 'af_packet'
+# default['packetbeat']['config']['interfaces']['buffer_size_mb'] = 30
 
 # default['packetbeat']['config']['shipper']['name'] = node['fqdn'] || node['host']
 # default['packetbeat']['config']['shipper']['tags'] = []
@@ -53,14 +53,15 @@ default['packetbeat']['config']['protocols'] = {}
 # default['packetbeat']['config']['protocols']['mongo']['send_request'] = false
 # default['packetbeat']['config']['protocols']['mongo']['send_response'] = false
 
+default['packetbeat']['config']['output'] = {}
+
 # elasticsearch host info
-default['packetbeat']['config']['output']['elasticsearch']['enabled'] = true
-default['packetbeat']['config']['output']['elasticsearch']['hosts'] = []
+#default['packetbeat']['config']['output']['elasticsearch']['hosts'] = []
 # host and port attributes are deprecated
 # and will be removed on next release
-default['packetbeat']['config']['output']['elasticsearch']['host'] = '127.0.0.1'
-default['packetbeat']['config']['output']['elasticsearch']['port'] = 9_200
-default['packetbeat']['config']['output']['elasticsearch']['save_topology'] = true
+#default['packetbeat']['config']['output']['elasticsearch']['host'] = '127.0.0.1'
+#default['packetbeat']['config']['output']['elasticsearch']['port'] = 9_200
+#default['packetbeat']['config']['output']['elasticsearch']['save_topology'] = true
 # default['packetbeat']['config']['output']['elasticsearch']['max_retries'] = 3
 # default['packetbeat']['config']['output']['elasticsearch']['bulk_max_size'] = 1000
 # default['packetbeat']['config']['output']['elasticsearch']['flush_interval'] = nil
@@ -71,10 +72,9 @@ default['packetbeat']['config']['output']['elasticsearch']['save_topology'] = tr
 # default['packetbeat']['config']['output']['elasticsearch']['index'] = '[packetbeat-]YYYY.MM.DD'
 # default['packetbeat']['config']['output']['elasticsearch']['path'] = '/elasticsearch'
 
-default['packetbeat']['config']['output']['redis']['enabled'] = false
-default['packetbeat']['config']['output']['redis']['host'] = '127.0.0.1'
-default['packetbeat']['config']['output']['redis']['port'] = 6_379
-default['packetbeat']['config']['output']['redis']['save_topology'] = true
+# default['packetbeat']['config']['output']['redis']['host'] = '127.0.0.1'
+# default['packetbeat']['config']['output']['redis']['port'] = 6_379
+# default['packetbeat']['config']['output']['redis']['save_topology'] = true
 # default['packetbeat']['config']['output']['redis']['db'] = 0
 # default['packetbeat']['config']['output']['redis']['db_topology'] = 1
 # default['packetbeat']['config']['output']['redis']['index'] = '[packetbeat-]YYYY.MM.DD'
@@ -82,11 +82,10 @@ default['packetbeat']['config']['output']['redis']['save_topology'] = true
 # default['packetbeat']['config']['output']['redis']['timeout'] = 5
 # default['packetbeat']['config']['output']['redis']['reconnect_interval'] = 1
 
-default['packetbeat']['config']['output']['file']['enabled'] = false
-default['packetbeat']['config']['output']['file']['path'] = '/tmp/packetbeat'
-default['packetbeat']['config']['output']['file']['filename'] = 'packetbeat'
-default['packetbeat']['config']['output']['file']['rotate_every_kb'] = 1_000
-default['packetbeat']['config']['output']['file']['number_of_files'] = 7
+# default['packetbeat']['config']['output']['file']['path'] = '/tmp/packetbeat'
+# default['packetbeat']['config']['output']['file']['filename'] = 'packetbeat'
+# default['packetbeat']['config']['output']['file']['rotate_every_kb'] = 1_000
+# default['packetbeat']['config']['output']['file']['number_of_files'] = 7
 
 # default['packetbeat']['config']['procs']['enabled'] = false
 # default['packetbeat']['config']['procs']['enabled']['monitored'] = [{'process' => 'mysqld', 'cmdline_grep' => 'mysqld]
