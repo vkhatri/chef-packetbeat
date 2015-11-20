@@ -39,5 +39,6 @@ end
 
 package 'packetbeat' do
   source package_file
+  options '--force-confdef --force-confold' if node['platform_family'] == 'debian'
   provider Chef::Provider::Package::Dpkg if node['platform_family'] == 'debian'
 end
