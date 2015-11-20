@@ -6,6 +6,8 @@ packetbeat Cookbook
 This is a [Chef] cookbook to manage [PacketBeat].
 
 
+>> For Production environment, always prefer the [most recent release](https://supermarket.chef.io/cookbooks/filebeat).
+
 ## Repository
 
 https://github.com/vkhatri/chef-packetbeat
@@ -28,7 +30,7 @@ This cookbook was tested on Amazon & Ubuntu Linux and expected to work on other 
 ## Core Attributes
 
 
-* `default['packetbeat']['version']` (default: `1.0.0-beta3`): packetbeat version
+* `default['packetbeat']['version']` (default: `1.0.0-rc2`): packetbeat version
 
 * `default['packetbeat']['package_url']` (default: `calculated`): package download url
 
