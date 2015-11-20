@@ -56,12 +56,12 @@ default['packetbeat']['config']['protocols'] = {}
 default['packetbeat']['config']['output'] = {}
 
 # elasticsearch host info
-#default['packetbeat']['config']['output']['elasticsearch']['hosts'] = []
+# default['packetbeat']['config']['output']['elasticsearch']['hosts'] = []
 # host and port attributes are deprecated
 # and will be removed on next release
-#default['packetbeat']['config']['output']['elasticsearch']['host'] = '127.0.0.1'
-#default['packetbeat']['config']['output']['elasticsearch']['port'] = 9_200
-#default['packetbeat']['config']['output']['elasticsearch']['save_topology'] = true
+# default['packetbeat']['config']['output']['elasticsearch']['host'] = '127.0.0.1'
+# default['packetbeat']['config']['output']['elasticsearch']['port'] = 9_200
+# default['packetbeat']['config']['output']['elasticsearch']['save_topology'] = true
 # default['packetbeat']['config']['output']['elasticsearch']['max_retries'] = 3
 # default['packetbeat']['config']['output']['elasticsearch']['bulk_max_size'] = 1000
 # default['packetbeat']['config']['output']['elasticsearch']['flush_interval'] = nil
