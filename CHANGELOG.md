@@ -3,6 +3,29 @@ packetbeat CHANGELOG
 
 This file is used to list changes made in each version of the packetbeat cookbook.
 
+0.2.0
+-----
+
+- Virender Khatri - #9, disable default['packetbeat']['config']['output']['elasticsearch']['hosts']
+
+- Virender Khatri - #10, ignore service restart on config change on disable_service
+
+- Virender Khatri - #11, remove dumy file packetbeat.yml
+
+- Jose Alberto - bump Packetbeat verion to 1.0.0 rc2
+
+- Jose Alberto - adapt attributes to new breaking changes
+
+- Jose Alberto - change defaults no more outputs by default
+
+- Virender Khatri - #14, update package_url to auto
+
+- Virender Khatri - #15, ubuntu packetbeat.yml package file conflict issue during upgrade
+
+- Virender Khatri -#16, added spec
+
+- Virender Khatri - #17, added 32bit platform support
+
 0.1.8
 -----
 

@@ -1,12 +1,25 @@
 packetbeat Cookbook
 ================
 
-[![Build Status](https://travis-ci.org/vkhatri/chef-packetbeat.svg?branch=master)](https://travis-ci.org/vkhatri/chef-packetbeat)
+[![Cookbook](http://img.shields.io/badge/cookbook-v0.2.0-green.svg)](https://github.com/vkhatri/chef-packetbeat)[![Build Status](https://travis-ci.org/vkhatri/chef-packetbeat.svg?branch=master)](https://travis-ci.org/vkhatri/chef-packetbeat)
 
 This is a [Chef] cookbook to manage [PacketBeat].
 
 
 >> For Production environment, always prefer the [most recent release](https://supermarket.chef.io/cookbooks/packetbeat).
+
+
+## Most Recent Release
+
+```
+cookbook 'packetbeat', '~> 0.2.0'
+```
+
+## From Git
+
+```
+cookbook 'packetbeat', github: 'vkhatri/chef-packetbeat'
+```
 
 ## Repository
 
