@@ -21,10 +21,16 @@ node['packetbeat']['packages'].each do |p|
   package p
 end
 
+if node['platform_family'] == 'debian' && node['kernel']['machine'] == 'x86_64'
+  arch_name = 'amd64'
+else
+  arch_name = node['kernel']['machine']
+end
+
 if node['packetbeat']['package_url'] == 'auto'
   package_url = value_for_platform_family(
-    'debian' => "https://download.elasticsearch.org/beats/packetbeat/packetbeat_#{node['packetbeat']['version']}_amd64.deb",
-    %w(rhel fedora) => "https://download.elasticsearch.org/beats/packetbeat/packetbeat-#{node['packetbeat']['version']}-x86_64.rpm"
+    'debian' => "https://download.elasticsearch.org/beats/packetbeat/packetbeat_#{node['packetbeat']['version']}_#{arch_name}.deb",
+    %w(rhel fedora) => "https://download.elasticsearch.org/beats/packetbeat/packetbeat-#{node['packetbeat']['version']}-#{arch_name}.rpm"
   )
 else
   package_url = node['packetbeat']['package_url']
