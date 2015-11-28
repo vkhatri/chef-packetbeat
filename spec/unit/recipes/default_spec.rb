@@ -9,10 +9,6 @@ describe 'packetbeat::default' do
         end
       end
 
-      it 'download packetbeat package file' do
-        expect(chef_run).to create_remote_file('packetbeat_package_file')
-      end
-
       it 'install packetbeat package' do
         expect(chef_run).to install_package('packetbeat')
       end
@@ -35,6 +31,10 @@ describe 'packetbeat::default' do
       end.converge(described_recipe)
     end
 
+    it 'adds beats yum repository' do
+      expect(chef_run).to create_yum_repository('beats')
+    end
+
     it 'install package libpcap' do
       expect(chef_run).to install_package('libpcap')
     end
@@ -47,6 +47,10 @@ describe 'packetbeat::default' do
       ChefSpec::SoloRunner.new(platform: 'ubuntu', version: '12.04') do |node|
         node.automatic['platform_family'] = 'debian'
       end.converge(described_recipe)
+    end
+
+    it 'adds beats apt repository' do
+      expect(chef_run).to add_apt_repository('beats')
     end
 
     it 'install package libpcap' do

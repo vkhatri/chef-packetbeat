@@ -21,31 +21,27 @@ node['packetbeat']['packages'].each do |p|
   package p
 end
 
-if node['platform_family'] == 'debian' && node['kernel']['machine'] == 'x86_64'
-  arch_name = 'amd64'
-else
-  arch_name = node['kernel']['machine']
-end
-
-if node['packetbeat']['package_url'] == 'auto'
-  package_url = value_for_platform_family(
-    'debian' => "https://download.elasticsearch.org/beats/packetbeat/packetbeat_#{node['packetbeat']['version']}_#{arch_name}.deb",
-    %w(rhel fedora) => "https://download.elasticsearch.org/beats/packetbeat/packetbeat-#{node['packetbeat']['version']}-#{arch_name}.rpm"
-  )
-else
-  package_url = node['packetbeat']['package_url']
-end
-
-package_file = ::File.join(Chef::Config[:file_cache_path], ::File.basename(package_url))
-
-remote_file 'packetbeat_package_file' do
-  path package_file
-  source package_url
-  not_if { ::File.exist?(package_file) }
+case node['platform_family']
+when 'debian'
+  # apt repository configuration
+  apt_repository 'beats' do
+    uri node['packetbeat']['apt']['uri']
+    components node['packetbeat']['apt']['components']
+    key node['packetbeat']['apt']['key']
+    action node['packetbeat']['apt']['action']
+  end
+when 'rhel'
+  # yum repository configuration
+  yum_repository 'beats' do
+    description node['packetbeat']['yum']['description']
+    baseurl node['packetbeat']['yum']['baseurl']
+    gpgcheck node['packetbeat']['yum']['gpgcheck']
+    gpgkey node['packetbeat']['yum']['gpgkey']
+    enabled node['packetbeat']['yum']['enabled']
+    action node['packetbeat']['yum']['action']
+  end
 end
 
 package 'packetbeat' do
-  source package_file
-  options '--force-confdef --force-confold' if node['platform_family'] == 'debian'
-  provider Chef::Provider::Package::Dpkg if node['platform_family'] == 'debian'
+  version node['platform_family'] == 'rhel' ? node['packetbeat']['version'] + '-1' : node['packetbeat']['version']
 end
