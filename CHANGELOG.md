@@ -3,6 +3,13 @@ packetbeat CHANGELOG
 
 This file is used to list changes made in each version of the packetbeat cookbook.
 
+0.2.1
+-----
+
+- Virender Khatri - #18, major changes to support repository package install
+
+- Virender Khatri - #19, fix kitchen test
+
 0.2.0
 -----
 

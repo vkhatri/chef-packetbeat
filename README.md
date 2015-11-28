@@ -1,7 +1,7 @@
 packetbeat Cookbook
 ================
 
-[![Cookbook](http://img.shields.io/badge/cookbook-v0.2.0-green.svg)](https://github.com/vkhatri/chef-packetbeat)[![Build Status](https://travis-ci.org/vkhatri/chef-packetbeat.svg?branch=master)](https://travis-ci.org/vkhatri/chef-packetbeat)
+[![Cookbook](http://img.shields.io/badge/cookbook-v0.2.1-green.svg)](https://github.com/vkhatri/chef-packetbeat)[![Build Status](https://travis-ci.org/vkhatri/chef-packetbeat.svg?branch=master)](https://travis-ci.org/vkhatri/chef-packetbeat)
 
 This is a [Chef] cookbook to manage [PacketBeat].
 
@@ -12,7 +12,7 @@ This is a [Chef] cookbook to manage [PacketBeat].
 ## Most Recent Release
 
 ```
-cookbook 'packetbeat', '~> 0.2.0'
+cookbook 'packetbeat', '~> 0.2.1'
 ```
 
 ## From Git
@@ -43,9 +43,7 @@ This cookbook was tested on Amazon & Ubuntu Linux and expected to work on other 
 ## Core Attributes
 
 
-* `default['packetbeat']['version']` (default: `1.0.0-rc2`): packetbeat version
-
-* `default['packetbeat']['package_url']` (default: `auto`): package download url
+* `default['packetbeat']['version']` (default: `1.0.0`): packetbeat version
 
 * `default['packetbeat']['packages']` (default: `calculated`): package dependencies
 
@@ -69,6 +67,31 @@ This cookbook was tested on Amazon & Ubuntu Linux and expected to work on other 
 For more attribute info, visit below links:
 
 https://github.com/elastic/packetbeat/blob/master/etc/packetbeat.yml
+
+## Filebeat YUM/APT Repository Attributes
+
+* `default['packetbeat']['yum']['description']` (default: ``): beats yum reporitory attribute
+
+* `default['packetbeat']['yum']['gpgcheck']` (default: `true`): beats yum reporitory attribute
+
+* `default['packetbeat']['yum']['enabled']` (default: `true`): beats yum reporitory attribute
+
+* `default['packetbeat']['yum']['baseurl']` (default: `https://packages.elastic.co/beats/yum/el/$basearch`): beatsyum reporitory attribute
+
+* `default['packetbeat']['yum']['gpgkey']` (default: `https://packages.elasticsearch.org/GPG-KEY-elasticsearch`): beats yum reporitory attribute
+
+* `default['packetbeat']['yum']['action']` (default: `:create`): beats yum reporitory attribute
+
+
+* `default['packetbeat']['apt']['description']` (default: `calculated`): beats apt reporitory attribute
+
+* `default['packetbeat']['apt']['components']` (default: `['stable', 'main']`): beats apt reporitory attribute
+
+* `default['packetbeat']['apt']['uri']` (default: `https://packages.elastic.co/beats/apt`): beats apt reporitory attribute
+
+* `default['packetbeat']['apt']['key']` (default: `http://packages.elasticsearch.org/GPG-KEY-elasticsearch`): beats apt reporitory attribute
+
+* `default['packetbeat']['apt']['action']` (default: `:add`): filebeat apt reporitory attribute
 
 
 ## Contributing
