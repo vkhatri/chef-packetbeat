@@ -1,7 +1,7 @@
 packetbeat Cookbook
 ================
 
-[![Cookbook](http://img.shields.io/badge/cookbook-v0.2.1-green.svg)](https://github.com/vkhatri/chef-packetbeat)[![Build Status](https://travis-ci.org/vkhatri/chef-packetbeat.svg?branch=master)](https://travis-ci.org/vkhatri/chef-packetbeat)
+[![Cookbook](http://img.shields.io/badge/cookbook-v0.2.2-green.svg)](https://github.com/vkhatri/chef-packetbeat)[![Build Status](https://travis-ci.org/vkhatri/chef-packetbeat.svg?branch=master)](https://travis-ci.org/vkhatri/chef-packetbeat)
 
 This is a [Chef] cookbook to manage [PacketBeat].
 
@@ -12,7 +12,7 @@ This is a [Chef] cookbook to manage [PacketBeat].
 ## Most Recent Release
 
 ```
-cookbook 'packetbeat', '~> 0.2.1'
+cookbook 'packetbeat', '~> 0.2.2'
 ```
 
 ## From Git
@@ -115,7 +115,7 @@ This cookbook was tested on Amazon & Ubuntu Linux and expected to work on other 
 
 ## Core Attributes
 
-* `default['packetbeat']['version']` (default: `1.0.0`): packetbeat version
+* `default['packetbeat']['version']` (default: `1.0.1`): packetbeat version
 
 * `default['packetbeat']['packages']` (default: `calculated`): package dependencies
 

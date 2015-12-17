@@ -3,6 +3,15 @@ packetbeat CHANGELOG
 
 This file is used to list changes made in each version of the packetbeat cookbook.
 
+0.2.2
+-----
+
+- Virender Khatri - #23, add yum_repository resource attribute metadata_expiry
+
+- Virender Khatri - #22, update to beats v1.0.1
+
+- Virender Khatri - #20, add output configuration example
+
 0.2.1
 -----
 
