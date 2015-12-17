@@ -72,15 +72,11 @@ default['packetbeat']['config']['output'] = {}
 # default['packetbeat']['config']['output']['elasticsearch']['index'] = '[packetbeat-]YYYY.MM.DD'
 # default['packetbeat']['config']['output']['elasticsearch']['path'] = '/elasticsearch'
 
-# default['packetbeat']['config']['output']['redis']['host'] = '127.0.0.1'
-# default['packetbeat']['config']['output']['redis']['port'] = 6_379
-# default['packetbeat']['config']['output']['redis']['save_topology'] = true
-# default['packetbeat']['config']['output']['redis']['db'] = 0
-# default['packetbeat']['config']['output']['redis']['db_topology'] = 1
-# default['packetbeat']['config']['output']['redis']['index'] = '[packetbeat-]YYYY.MM.DD'
-# default['packetbeat']['config']['output']['redis']['password'] = nil
-# default['packetbeat']['config']['output']['redis']['timeout'] = 5
-# default['packetbeat']['config']['output']['redis']['reconnect_interval'] = 1
+# default['packetbeat']['config']['output']['logstash']['enabled'] = false
+# default['packetbeat']['config']['output']['logstash']['hosts'] = []
+# default['packetbeat']['config']['output']['logstash']['loadbalance'] = true
+# default['packetbeat']['config']['output']['logstash']['save_topology'] = true
+# default['packetbeat']['config']['output']['logstash']['index'] = 'packetbeat'
 
 # default['packetbeat']['config']['output']['file']['path'] = '/tmp/packetbeat'
 # default['packetbeat']['config']['output']['file']['filename'] = 'packetbeat'
