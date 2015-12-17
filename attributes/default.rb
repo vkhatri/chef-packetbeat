@@ -14,6 +14,7 @@ default['packetbeat']['yum']['description'] = 'Elastic Beats Repository'
 default['packetbeat']['yum']['gpgcheck'] = true
 default['packetbeat']['yum']['enabled'] = true
 default['packetbeat']['yum']['gpgkey'] = 'https://packages.elasticsearch.org/GPG-KEY-elasticsearch'
+default['packetbeat']['yum']['metadata_expire'] = '3h'
 default['packetbeat']['yum']['action'] = :create
 
 default['packetbeat']['apt']['uri'] = 'https://packages.elastic.co/beats/apt'

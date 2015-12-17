@@ -38,6 +38,7 @@ when 'rhel'
     gpgcheck node['packetbeat']['yum']['gpgcheck']
     gpgkey node['packetbeat']['yum']['gpgkey']
     enabled node['packetbeat']['yum']['enabled']
+    metadata_expire node['packetbeat']['yum']['metadata_expire']
     action node['packetbeat']['yum']['action']
   end
 end

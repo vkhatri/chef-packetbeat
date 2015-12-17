@@ -152,6 +152,8 @@ https://github.com/elastic/packetbeat/blob/master/etc/packetbeat.yml
 
 * `default['packetbeat']['yum']['gpgkey']` (default: `https://packages.elasticsearch.org/GPG-KEY-elasticsearch`): beats yum reporitory attribute
 
+* `default['packetbeat']['yum']['metadata_expire']` (default: `3h`): beats yum reporitory attribute
+
 * `default['packetbeat']['yum']['action']` (default: `:create`): beats yum reporitory attribute
 
 
