@@ -40,8 +40,80 @@ This cookbook was tested on Amazon & Ubuntu Linux and expected to work on other 
 - `packetbeat::config` - configure packetbeat
 
 
-## Core Attributes
+## How to Add Packetbeat Output via Node Attribute
 
+### ElasticSearch Output
+
+```
+  "default_attributes": {
+    "packetbeat": {
+      "config": {
+        "output": {
+          "elasticsearch": {
+		    "enabled": true,
+			"hosts": ["127.0.0.1:9200"],
+			"save_topology": false,
+			"max_retries": 3,
+			"bulk_max_size": 1000,
+			"flush_interval": null,
+			"protocol": "http",
+			"username": null,
+			"password": null,
+			"index": "packetbeat",
+			"path": "/elasticsearch"
+          }
+        }
+      }
+    }
+  }
+
+```
+
+
+### Logstash Output
+
+```
+  "default_attributes": {
+    "packetbeat": {
+      "config": {
+        "output": {
+          "logstash": {
+			"enabled": true,
+			"hosts": ["127.0.0.1:5000"],
+			"loadbalance": true,
+			"save_topology": false,
+			"index": "packetbeat"
+          }
+        }
+      }
+    }
+  }
+
+```
+
+### File Output
+
+```
+  "default_attributes": {
+    "packetbeat": {
+      "config": {
+        "output": {
+          "file": {
+			"enabled": true,
+			"path": "/tmp/packetbeat",
+			"filename": "packetbeat",
+			"rotate_every_kb": 1000,
+			"number_of_files": 7
+          }
+        }
+      }
+    }
+  }
+
+```
+
+
+## Core Attributes
 
 * `default['packetbeat']['version']` (default: `1.0.0`): packetbeat version
 
@@ -68,7 +140,7 @@ For more attribute info, visit below links:
 
 https://github.com/elastic/packetbeat/blob/master/etc/packetbeat.yml
 
-## Filebeat YUM/APT Repository Attributes
+## Packetbeat YUM/APT Repository Attributes
 
 * `default['packetbeat']['yum']['description']` (default: ``): beats yum reporitory attribute
 
@@ -91,7 +163,7 @@ https://github.com/elastic/packetbeat/blob/master/etc/packetbeat.yml
 
 * `default['packetbeat']['apt']['key']` (default: `http://packages.elasticsearch.org/GPG-KEY-elasticsearch`): beats apt reporitory attribute
 
-* `default['packetbeat']['apt']['action']` (default: `:add`): filebeat apt reporitory attribute
+* `default['packetbeat']['apt']['action']` (default: `:add`): packetbeat apt reporitory attribute
 
 
 ## Contributing
