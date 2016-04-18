@@ -46,4 +46,5 @@ end
 
 package 'packetbeat' do
   version node['platform_family'] == 'rhel' ? node['packetbeat']['version'] + '-1' : node['packetbeat']['version']
+  options node['packetbeat']['apt']['options'] if node['packetbeat']['apt']['options'] && node['platform_family'] == 'debian'
 end

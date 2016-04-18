@@ -22,4 +22,5 @@ default['packetbeat']['apt']['description'] = 'Elastic Beats Repository'
 default['packetbeat']['apt']['components'] = %w(stable main)
 default['packetbeat']['apt']['action'] = :add
 default['packetbeat']['apt']['distribution'] = ''
+default['packetbeat']['apt']['options'] = "-o Dpkg::Options::='--force-confnew'"
 default['packetbeat']['apt']['key'] = 'https://packages.elasticsearch.org/GPG-KEY-elasticsearch'
