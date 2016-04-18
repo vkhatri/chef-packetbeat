@@ -28,6 +28,7 @@ when 'debian'
     uri node['packetbeat']['apt']['uri']
     components node['packetbeat']['apt']['components']
     key node['packetbeat']['apt']['key']
+    distribution node['packetbeat']['apt']['distribution']
     action node['packetbeat']['apt']['action']
   end
 when 'rhel'
