@@ -3,6 +3,22 @@ packetbeat CHANGELOG
 
 This file is used to list changes made in each version of the packetbeat cookbook.
 
+0.2.4
+-----
+
+- Virender Khatri - updated beats to v1.3.1
+
+- Virender Khatri - update travis ruby version
+
+- Virender Khatri - updated kitchen os
+
+0.2.3
+-----
+
+- Virender Khatri - update to beats v1.2.3
+
+- Virender Khatri - added deb package option and apt distribution
+
 0.2.2
 -----
 
