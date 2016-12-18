@@ -17,5 +17,6 @@
 # limitations under the License.
 #
 
+include_recipe 'packetbeat::attributes'
 include_recipe 'packetbeat::install'
 include_recipe 'packetbeat::config'
