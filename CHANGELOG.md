@@ -3,6 +3,13 @@ packetbeat CHANGELOG
 
 This file is used to list changes made in each version of the packetbeat cookbook.
 
+0.2.5
+-----
+
+- Virender Khatri - added beatx v5.x support
+
+- Virender Khatri - updated beats to v5.1.1
+
 0.2.4
 -----
 
