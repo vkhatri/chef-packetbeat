@@ -115,7 +115,7 @@ This cookbook was tested on Amazon & Ubuntu Linux and expected to work on other 
 
 ## Core Attributes
 
-* `default['packetbeat']['version']` (default: `5.1.1`): packetbeat version
+* `default['packetbeat']['version']` (default: `5.1.2`): packetbeat version
 
 * `default['packetbeat']['packages']` (default: `calculated`): package dependencies
 
