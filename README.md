@@ -1,7 +1,7 @@
 packetbeat Cookbook
 ================
 
-[![Cookbook](http://img.shields.io/badge/cookbook-v0.2.5-green.svg)](https://github.com/vkhatri/chef-packetbeat)[![Build Status](https://travis-ci.org/vkhatri/chef-packetbeat.svg?branch=master)](https://travis-ci.org/vkhatri/chef-packetbeat)
+[![Cookbook](https://img.shields.io/github/tag/vkhatri/chef-packetbeat.svg)](https://github.com/vkhatri/chef-packetbeat)[![Build Status](https://travis-ci.org/vkhatri/chef-packetbeat.svg?branch=master)](https://travis-ci.org/vkhatri/chef-packetbeat)
 
 This is a [Chef] cookbook to manage [PacketBeat].
 
@@ -11,20 +11,21 @@ This is a [Chef] cookbook to manage [PacketBeat].
 
 ## Most Recent Release
 
-```
-cookbook 'packetbeat', '~> 0.2.5'
+```ruby
+cookbook 'packetbeat', '~> 0.2.6'
 ```
 
 ## From Git
 
-```
-cookbook 'packetbeat', github: 'vkhatri/chef-packetbeat'
+```ruby
+cookbook 'packetbeat', github: 'vkhatri/chef-packetbeat',  tag: 'v0.2.6'
 ```
 
 ## Repository
 
+```
 https://github.com/vkhatri/chef-packetbeat
-
+```
 
 ## Supported OS
 
