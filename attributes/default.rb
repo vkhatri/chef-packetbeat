@@ -1,4 +1,4 @@
-default['packetbeat']['version'] = '5.1.2'
+default['packetbeat']['version'] = '5.2.2'
 default['packetbeat']['disable_service'] = false
 default['packetbeat']['packages'] = value_for_platform_family(
   'debian' => %w(libpcap0.8),
