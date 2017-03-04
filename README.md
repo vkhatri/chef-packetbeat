@@ -12,13 +12,13 @@ This is a [Chef] cookbook to manage [PacketBeat].
 ## Most Recent Release
 
 ```ruby
-cookbook 'packetbeat', '~> 0.2.6'
+cookbook 'packetbeat', '~> 0.2.7'
 ```
 
 ## From Git
 
 ```ruby
-cookbook 'packetbeat', github: 'vkhatri/chef-packetbeat',  tag: 'v0.2.6'
+cookbook 'packetbeat', github: 'vkhatri/chef-packetbeat',  tag: 'v0.2.7'
 ```
 
 ## Repository

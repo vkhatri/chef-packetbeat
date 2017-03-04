@@ -3,6 +3,13 @@ packetbeat CHANGELOG
 
 This file is used to list changes made in each version of the packetbeat cookbook.
 
+0.2.7
+-----
+
+- Virender Khatri - enabled ci kitchen tests
+
+- Virender Khatri - updated beats to v5.2.2
+
 0.2.6
 -----
 
