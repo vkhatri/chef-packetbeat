@@ -12,13 +12,13 @@ This is a [Chef] cookbook to manage [PacketBeat].
 ## Most Recent Release
 
 ```ruby
-cookbook 'packetbeat', '~> 0.2.6'
+cookbook 'packetbeat', '~> 0.2.7'
 ```
 
 ## From Git
 
 ```ruby
-cookbook 'packetbeat', github: 'vkhatri/chef-packetbeat',  tag: 'v0.2.6'
+cookbook 'packetbeat', github: 'vkhatri/chef-packetbeat',  tag: 'v0.2.7'
 ```
 
 ## Repository
@@ -116,7 +116,7 @@ This cookbook was tested on Amazon & Ubuntu Linux and expected to work on other 
 
 ## Core Attributes
 
-* `default['packetbeat']['version']` (default: `5.1.2`): packetbeat version
+* `default['packetbeat']['version']` (default: `5.2.2`): packetbeat version
 
 * `default['packetbeat']['packages']` (default: `calculated`): package dependencies
 
