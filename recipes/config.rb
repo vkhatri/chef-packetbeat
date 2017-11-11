@@ -10,7 +10,7 @@ file node['packetbeat']['conf_file'] do
   notifies :restart, 'service[packetbeat]' if node['packetbeat']['notify_restart'] && !node['packetbeat']['disable_service']
 end
 
-service_action = node['packetbeat']['disable_service'] ? [:disable, :stop] : [:enable, :start]
+service_action = node['packetbeat']['disable_service'] ? %i[disable stop] : %i[enable start]
 
 service 'packetbeat' do
   retries node['packetbeat']['service']['retries']

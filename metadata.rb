@@ -1,7 +1,7 @@
 name 'packetbeat'
 maintainer 'Virender Khatri'
 maintainer_email 'vir.khatri@gmail.com'
-license 'Apache 2.0'
+license 'Apache-2.0'
 description 'Installs/Configures Elastic Packetbeat'
 long_description 'Installs/Configures Elastic Packetbeat'
 version '0.2.7'
@@ -12,6 +12,6 @@ chef_version '>= 12.1' if respond_to?(:chef_version)
 depends 'elastic_beats_repo'
 depends 'yum-plugin-versionlock', '>= 0.1.2'
 
-%w(debian ubuntu centos amazon redhat fedora).each do |os|
+%w[debian ubuntu centos amazon redhat fedora].each do |os|
   supports os
 end

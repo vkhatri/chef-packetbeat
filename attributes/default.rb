@@ -14,8 +14,8 @@ default['packetbeat']['service']['retries'] = 0
 default['packetbeat']['service']['retry_delay'] = 2
 
 default['packetbeat']['packages'] = value_for_platform_family(
-  'debian' => %w(libpcap0.8),
-  %w(amazon rhel fedora) => %w(libpcap),
+  'debian' => %w[libpcap0.8],
+  %w[amazon rhel fedora] => %w[libpcap],
   'default' => []
 )
 

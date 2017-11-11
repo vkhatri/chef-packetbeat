@@ -3,7 +3,7 @@ require 'spec_helper'
 describe 'packetbeat::default' do
   shared_examples_for 'packetbeat' do
     context 'all_platforms' do
-      %w(install config).each do |r|
+      %w[install config].each do |r|
         it "include recipe packetbeat::#{r}" do
           expect(chef_run).to include_recipe("packetbeat::#{r}")
         end

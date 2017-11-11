@@ -35,7 +35,7 @@ else
   raise "platform_family #{node['platform_family']} not supported"
 end
 
-package 'packetbeat' do
+package 'packetbeat' do # ~FC009
   version version_string unless node['packetbeat']['ignore_version']
   options node['packetbeat']['apt']['options'] if node['packetbeat']['apt']['options'] && node['platform_family'] == 'debian'
   notifies :restart, "service[#{node['packetbeat']['service']['name']}]" if node['packetbeat']['notify_restart'] && !node['packetbeat']['disable_service']
