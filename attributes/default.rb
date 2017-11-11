@@ -9,14 +9,4 @@ default['packetbeat']['notify_restart'] = true
 default['packetbeat']['conf_dir'] = '/etc/packetbeat'
 default['packetbeat']['conf_file'] = ::File.join(node['packetbeat']['conf_dir'], 'packetbeat.yml')
 
-default['packetbeat']['yum']['description'] = 'Elastic Beats Repository'
-default['packetbeat']['yum']['gpgcheck'] = true
-default['packetbeat']['yum']['enabled'] = true
-default['packetbeat']['yum']['metadata_expire'] = '3h'
-default['packetbeat']['yum']['action'] = :create
-
-default['packetbeat']['apt']['description'] = 'Elastic Beats Repository'
-default['packetbeat']['apt']['components'] = %w(stable main)
-default['packetbeat']['apt']['action'] = :add
-default['packetbeat']['apt']['distribution'] = ''
 default['packetbeat']['apt']['options'] = "-o Dpkg::Options::='--force-confnew'"

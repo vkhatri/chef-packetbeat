@@ -23,25 +23,11 @@ end
 
 case node['platform_family']
 when 'debian'
-  # apt repository configuration
-  apt_repository 'beats' do
-    uri node['packetbeat']['apt']['uri']
-    components node['packetbeat']['apt']['components']
-    key node['packetbeat']['apt']['key']
-    distribution node['packetbeat']['apt']['distribution']
-    action node['packetbeat']['apt']['action']
-  end
+  include_recipe 'elastic_beats_repo::apt'
 when 'rhel'
-  # yum repository configuration
-  yum_repository 'beats' do
-    description node['packetbeat']['yum']['description']
-    baseurl node['packetbeat']['yum']['baseurl']
-    gpgcheck node['packetbeat']['yum']['gpgcheck']
-    gpgkey node['packetbeat']['yum']['gpgkey']
-    enabled node['packetbeat']['yum']['enabled']
-    metadata_expire node['packetbeat']['yum']['metadata_expire']
-    action node['packetbeat']['yum']['action']
-  end
+  include_recipe 'elastic_beats_repo::yum'
+else
+  raise "platform_family #{node['platform_family']} not supported"
 end
 
 package 'packetbeat' do

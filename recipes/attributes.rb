@@ -17,15 +17,4 @@
 # limitations under the License.
 #
 
-if node['packetbeat']['version'] < '5.0'
-  node.default['packetbeat']['yum']['baseurl'] = 'https://packages.elastic.co/beats/yum/el/$basearch'
-  node.default['packetbeat']['yum']['gpgkey'] = 'https://packages.elastic.co/GPG-KEY-elasticsearch'
-  node.default['packetbeat']['apt']['uri'] = 'https://packages.elastic.co/beats/apt'
-  node.default['packetbeat']['apt']['key'] = 'https://packages.elastic.co/GPG-KEY-elasticsearch'
-else
-  major_version = node['packetbeat']['version'].split('.')[0]
-  node.default['packetbeat']['yum']['baseurl'] = "https://artifacts.elastic.co/packages/#{major_version}.x/yum"
-  node.default['packetbeat']['yum']['gpgkey'] = 'https://artifacts.elastic.co/GPG-KEY-elasticsearch'
-  node.default['packetbeat']['apt']['uri'] = "https://artifacts.elastic.co/packages/#{major_version}.x/apt"
-  node.default['packetbeat']['apt']['key'] = 'https://artifacts.elastic.co/GPG-KEY-elasticsearch'
-end
+node.default['elastic_beats_repo']['version'] = node['packetbeat']['version']
