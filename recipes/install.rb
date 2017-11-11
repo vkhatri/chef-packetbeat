@@ -24,13 +24,13 @@ end
 case node['platform_family']
 when 'debian'
   include_recipe 'elastic_beats_repo::apt'
-when 'rhel'
+when 'rhel', 'amazon'
   include_recipe 'elastic_beats_repo::yum'
 else
   raise "platform_family #{node['platform_family']} not supported"
 end
 
 package 'packetbeat' do
-  version node['platform_family'] == 'rhel' ? node['packetbeat']['version'] + '-1' : node['packetbeat']['version']
+  version %w[rhel amazon].include?(node['platform_family']) ? node['packetbeat']['version'] + '-1' : node['packetbeat']['version']
   options node['packetbeat']['apt']['options'] if node['packetbeat']['apt']['options'] && node['platform_family'] == 'debian'
 end
