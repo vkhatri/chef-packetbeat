@@ -141,33 +141,6 @@ For more attribute info, visit below links:
 
 https://github.com/elastic/packetbeat/blob/master/etc/packetbeat.yml
 
-## Packetbeat YUM/APT Repository Attributes
-
-* `default['packetbeat']['yum']['description']` (default: ``): beats yum reporitory attribute
-
-* `default['packetbeat']['yum']['gpgcheck']` (default: `true`): beats yum reporitory attribute
-
-* `default['packetbeat']['yum']['enabled']` (default: `true`): beats yum reporitory attribute
-
-* `default['packetbeat']['yum']['baseurl']` (default: `https://packages.elastic.co/beats/yum/el/$basearch`): beatsyum reporitory attribute
-
-* `default['packetbeat']['yum']['gpgkey']` (default: `https://packages.elasticsearch.org/GPG-KEY-elasticsearch`): beats yum reporitory attribute
-
-* `default['packetbeat']['yum']['metadata_expire']` (default: `3h`): beats yum reporitory attribute
-
-* `default['packetbeat']['yum']['action']` (default: `:create`): beats yum reporitory attribute
-
-
-* `default['packetbeat']['apt']['description']` (default: `calculated`): beats apt reporitory attribute
-
-* `default['packetbeat']['apt']['components']` (default: `['stable', 'main']`): beats apt reporitory attribute
-
-* `default['packetbeat']['apt']['uri']` (default: `https://packages.elastic.co/beats/apt`): beats apt reporitory attribute
-
-* `default['packetbeat']['apt']['key']` (default: `http://packages.elasticsearch.org/GPG-KEY-elasticsearch`): beats apt reporitory attribute
-
-* `default['packetbeat']['apt']['action']` (default: `:add`): packetbeat apt reporitory attribute
-
 
 ## Contributing
 
