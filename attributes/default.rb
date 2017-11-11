@@ -1,4 +1,4 @@
-default['packetbeat']['version'] = '5.2.2'
+default['packetbeat']['version'] = '5.6.4'
 default['packetbeat']['release'] = '1'
 default['packetbeat']['ignore_version'] = false
 default['packetbeat']['disable_service'] = false
