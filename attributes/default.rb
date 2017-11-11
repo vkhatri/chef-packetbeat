@@ -7,6 +7,8 @@ default['packetbeat']['notify_restart'] = true
 default['packetbeat']['conf_dir'] = '/etc/packetbeat'
 default['packetbeat']['conf_file'] = ::File.join(node['packetbeat']['conf_dir'], 'packetbeat.yml')
 
+default['packetbeat']['package_url'] = 'auto'
+
 default['packetbeat']['service']['name'] = 'packetbeat'
 default['packetbeat']['service']['retries'] = 0
 default['packetbeat']['service']['retry_delay'] = 2
