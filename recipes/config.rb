@@ -25,6 +25,8 @@ end
 service_action = node['packetbeat']['disable_service'] ? [:disable, :stop] : [:enable, :start]
 
 service 'packetbeat' do
+  retries node['packetbeat']['service']['retries']
+  retry_delay node['packetbeat']['service']['retry_delay']
   supports :status => true, :restart => true
   action service_action
 end

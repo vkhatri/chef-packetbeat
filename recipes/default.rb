@@ -18,5 +18,6 @@
 #
 
 include_recipe 'packetbeat::attributes'
+include_recipe 'yum-plugin-versionlock::default' if %w[fedora rhel amazon].include?(node['platform_family'])
 include_recipe 'packetbeat::install'
 include_recipe 'packetbeat::config'
