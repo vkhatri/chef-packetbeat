@@ -3,6 +3,25 @@ packetbeat CHANGELOG
 
 This file is used to list changes made in each version of the packetbeat cookbook.
 
+1.0.0
+-----
+
+- Virender Khatri - updated beats to v5.6.4
+
+- Virender Khatri - added preview release support
+
+- Virender Khatri - updated kitchen dokken test
+
+- Virender Khatri - optional elastic beats repo setup
+
+- Virender Khatri - conditional service restart
+
+- Virender Khatri - package version lock
+
+- Virender Khatri - use cookbook elastic_beats_repo
+
+- Virender Khatri - added amazon platform support
+
 0.2.7
 -----
 
